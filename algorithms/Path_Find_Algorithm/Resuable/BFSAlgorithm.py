@@ -21,6 +21,8 @@ def shortest_path(graph, start, goal):
     return None 
 
 def moves_corresponder_bfs(path, move_map):
+    if path is None:
+        return []
     edge_turns = []
     for i in range(len(path) - 1):
         edge = (path[i], path[i + 1])
