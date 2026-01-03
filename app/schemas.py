@@ -6,6 +6,6 @@ class SolveRequest(BaseModel):
     # method: str = "cfop"   # optional solver choice
 
 class SolveResponse(BaseModel):
-    solution: str
+    solution: list
     # solution: list[str]    # ["R", "U", "R'", "U'"]
     # move_count: int

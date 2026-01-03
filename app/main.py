@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from app.schemas import SolveRequest, SolveResponse
 from app.solver import solve_cube
+from algorithms.Path_Find_Algorithm.Path_Find_Main import sequence1d
 
 app = FastAPI(title="Rubik's Cube Solver API")
 
