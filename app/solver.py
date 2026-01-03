@@ -1,7 +1,7 @@
-# from algorithms.Path_Find_Algorithm.Path_Find_Main import solve_algorithm
+from algorithms.Path_Find_Algorithm.Path_Find_Main import solve_cube_internal
 
-def solve_cube(input: list[list[list[int]]]) -> str:
+def solve_cube(input_cube: list[list[list[int]]]) -> list:
     #convert input in 
-    print(f"cube: {input}")
+    sequence = solve_cube_internal(input_cube)
     # solve_algorithm(input)
-    return "solved xd"
+    return sequence

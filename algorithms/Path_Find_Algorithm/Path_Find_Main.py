@@ -24,16 +24,21 @@ def solve_algorithm(cube, seqeunce):
         CurrentState = move(CurrentState)
     return CurrentState
 
-moves_for_center = center_solver(cube_array_python)
-cube_after_center = solve_algorithm(cube_array_python, flatten(moves_for_center))
-moves_for_edges = edge_solver(cube_after_center)
-cube_after_edges = solve_algorithm(cube_after_center, flatten(moves_for_edges))
-moves_for_corners = corner_solver(cube_after_edges)
+def solve_cube_internal(cube):
+    moves_for_center = center_solver(cube)
+    cube_after_center = solve_algorithm(cube, flatten(moves_for_center))
 
-cube_sequence = []
-cube_sequence.append(moves_for_center)
-cube_sequence.append(moves_for_edges)
-cube_sequence.append(moves_for_corners)
+    moves_for_edges = edge_solver(cube_after_center)
+    cube_after_edges = solve_algorithm(cube_after_center, flatten(moves_for_edges))
 
-sequence1d = flatten(cube_sequence)
-print(sequence1d)
+    moves_for_corners = corner_solver(cube_after_edges)
+
+    sequence = flatten([
+        moves_for_center,
+        moves_for_edges,
+        moves_for_corners
+    ])
+
+    return sequence
+
+solve_cube_internal(cube_array_python)
