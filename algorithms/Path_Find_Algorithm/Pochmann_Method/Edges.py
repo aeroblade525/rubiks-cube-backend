@@ -1,10 +1,10 @@
 import copy
-from Path_Find_Algorithm.Resuable.PieceFinder import home_position_edge, edge_adjacents
-from Path_Find_Algorithm.Resuable.BFSAlgorithm import moves_corresponder_bfs, shortest_path
-from Path_Find_Algorithm.Edge_Pathfind.EdgeBFSMoveCorresponder import edge_map
-from Path_Find_Algorithm.Edge_Pathfind.EdgePath import edge_cube_path, coordinate_to_label
-from Cube_Algorithms.Tperm import Tperm_notation
-from Cube_Algorithms.Parity import parity_notation
+from ..Resuable.PieceFinder import home_position_edge, edge_adjacents
+from ..Resuable.BFSAlgorithm import moves_corresponder_bfs, shortest_path
+from ..Edge_Pathfind.EdgeBFSMoveCorresponder import edge_map
+from ..Edge_Pathfind.EdgePath import edge_cube_path, coordinate_to_label
+from ...Cube_Algorithms.Tperm import Tperm_notation
+from ...Cube_Algorithms.Parity import parity_notation
 
 all_paths_edge = ['AE', 'BE', 'CE', 'DE', 'EE', 'FE', 'GE', 'HE', 'IE', 'JE', 'KE', 'LE', 'ME', 'NE', 'OE', 'PE', 'QE', 'RE', 'SE', 'TE', 'UE', 'VE', 'WE', 'XE']
 

@@ -1,9 +1,9 @@
 import copy
-from Path_Find_Algorithm.Resuable.PieceFinder import home_position_corner, corner_adjacents
-from Path_Find_Algorithm.Resuable.BFSAlgorithm import moves_corresponder_bfs, shortest_path
-from Path_Find_Algorithm.Corners_Pathfind.CornerBFSMoveCorresponder import corner_map
-from Path_Find_Algorithm.Corners_Pathfind.CornerPath import corner_cube_path, coordinate_to_label_corners
-from Cube_Algorithms.Yperm import Yperm_notation
+from ..Resuable.PieceFinder import home_position_corner, corner_adjacents
+from ..Resuable.BFSAlgorithm import moves_corresponder_bfs, shortest_path
+from ..Corners_Pathfind.CornerBFSMoveCorresponder import corner_map
+from ..Corners_Pathfind.CornerPath import corner_cube_path, coordinate_to_label_corners
+from ...Cube_Algorithms.Yperm import Yperm_notation
 
 all_paths_corner = ['AC', 'BC', 'CC', 'DC', 'EC', 'FC', 'GC', 'HC', 'IC', 'JC', 'KC', 'LC', 'MC', 'NC', 'OC', 'PC', 'QC', 'RC', 'SC', 'TC', 'UC', 'VC', 'WC', 'XC']
 

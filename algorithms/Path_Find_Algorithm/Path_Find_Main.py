@@ -1,8 +1,12 @@
 import copy
-from PythonCubeArray import cube_array_python
-from Path_Find_Algorithm.Pochmann_Method.Centers import center_solver
-from Path_Find_Algorithm.Pochmann_Method.Edges import edge_solver
-from Path_Find_Algorithm.Pochmann_Method.Corners import corner_solver
+from ..PythonCubeArray import cube_array_python
+from .Pochmann_Method.Centers import center_solver
+from .Pochmann_Method.Edges import edge_solver
+from .Pochmann_Method.Corners import corner_solver
+from ..Cube_Turning.Cube_Turning_CCW import CubeArrayLCCW, CubeArrayBCCW, CubeArrayDCCW, CubeArrayFCCW, CubeArrayRCCW, CubeArrayUCCW
+from ..Cube_Turning.Cube_Turning_CW import CubeArrayLCW, CubeArrayBCW, CubeArrayDCW, CubeArrayFCW, CubeArrayRCW, CubeArrayUCW
+from ..Cube_Algorithms.Common_Moves.Sexy_Move import sexy_move_algorithm
+from ..Cube_Algorithms.Common_Moves.Sledge_Hammer import sledge_hammer_algorithm
 
 def flatten(lst):
     result = []
@@ -42,3 +46,20 @@ def solve_cube_internal(cube):
     return sequence
 
 solve_cube_internal(cube_array_python)
+
+moves_to_strings = {
+    CubeArrayLCCW: "LCCW",
+    CubeArrayLCW: "LCW",
+    CubeArrayBCCW: "BCCW",
+    CubeArrayBCW: "BCW",
+    CubeArrayDCCW: "DCCW",
+    CubeArrayDCW: "DCW",
+    CubeArrayFCCW: "FCCW",
+    CubeArrayFCW: "FCW",
+    CubeArrayRCCW: "RCCW",
+    CubeArrayRCW: "RCW",
+    CubeArrayUCCW: "UCCW",
+    CubeArrayUCW: "UCW",
+    sexy_move_algorithm: "Sexy_Move",
+    sledge_hammer_algorithm: "Sledge_Hammer",
+}
