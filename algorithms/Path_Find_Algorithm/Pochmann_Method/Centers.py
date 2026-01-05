@@ -6,6 +6,7 @@ from ..Centers_Pathfind.CentersBFSMoveCorresponder import center_map
 
 # function that places the center cubes in the desired home possible (not that important bc the edge function works eitherway)
 def center_solver(cube):
+    print("centerSolver ran")
     CurrentState = copy.deepcopy(cube)
     center_moves = []
 

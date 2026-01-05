@@ -3,8 +3,8 @@ from ..PythonCubeArray import cube_array_python
 from .Pochmann_Method.Centers import center_solver
 from .Pochmann_Method.Edges import edge_solver
 from .Pochmann_Method.Corners import corner_solver
-from ..Cube_Turning.Cube_Turning_CCW import CubeArrayLCCW, CubeArrayBCCW, CubeArrayDCCW, CubeArrayFCCW, CubeArrayRCCW, CubeArrayUCCW
-from ..Cube_Turning.Cube_Turning_CW import CubeArrayLCW, CubeArrayBCW, CubeArrayDCW, CubeArrayFCW, CubeArrayRCW, CubeArrayUCW
+from ..Cube_Turning.Cube_Turning_CCW import CubeArrayLCCW, CubeArrayBCCW, CubeArrayDCCW, CubeArrayFCCW, CubeArrayRCCW, CubeArrayUCCW, CubeArrayMCCW, CubeArraySCCW, CubeArrayECCW
+from ..Cube_Turning.Cube_Turning_CW import CubeArrayLCW, CubeArrayBCW, CubeArrayDCW, CubeArrayFCW, CubeArrayRCW, CubeArrayUCW, CubeArrayMCW, CubeArraySCW, CubeArrayECW
 from ..Cube_Algorithms.Common_Moves.Sexy_Move import sexy_move_algorithm
 from ..Cube_Algorithms.Common_Moves.Sledge_Hammer import sledge_hammer_algorithm
 
@@ -62,4 +62,10 @@ moves_to_strings = {
     CubeArrayUCW: "UCW",
     sexy_move_algorithm: "Sexy_Move",
     sledge_hammer_algorithm: "Sledge_Hammer",
+    CubeArrayMCCW: "MCCW",
+    CubeArrayMCW: "MCW",
+    CubeArraySCCW: "SCCW",
+    CubeArraySCW: "SCW",
+    CubeArrayECCW: "ECCW",
+    CubeArrayECW: "ECW"
 }
