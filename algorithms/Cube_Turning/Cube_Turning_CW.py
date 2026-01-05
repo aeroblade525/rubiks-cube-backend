@@ -77,35 +77,28 @@ def CubeArrayBCW(cube):
 
 def CubeArraySCW(cube):
     newCube = [[[], [], []] for _ in range(6)]
-
     newCube[0] = [
         [cube[0][0][0], cube[0][0][1], cube[0][0][2]],
-        [cube[4][0][1], cube[4][1][1], cube[4][2][1]],
+        [cube[1][2][1], cube[1][1][1], cube[1][0][1]],
         [cube[0][2][0], cube[0][2][1], cube[0][2][2]],
     ]
-
     newCube[1] = [
-        [cube[1][0][0], cube[0][1][2], cube[1][0][2]],
-        [cube[1][1][0], cube[0][1][1], cube[1][1][2]],
-        [cube[1][2][0], cube[0][1][0], cube[1][2][2]],
+        [cube[1][0][0], cube[2][1][0], cube[1][0][2]],
+        [cube[1][1][0], cube[2][1][1], cube[1][1][2]],
+        [cube[1][2][0], cube[2][1][2], cube[1][2][2]],
     ]
-
     newCube[2] = [
         [cube[2][0][0], cube[2][0][1], cube[2][0][2]],
-        [cube[1][0][1], cube[1][1][1], cube[1][2][1]],
+        [cube[4][2][1], cube[4][1][1], cube[4][0][1]],
         [cube[2][2][0], cube[2][2][1], cube[2][2][2]],
     ]
-
     newCube[3] = cube[3]
-
     newCube[4] = [
-        [cube[4][0][0], cube[2][1][2], cube[4][0][2]],
-        [cube[4][1][0], cube[2][1][1], cube[4][1][2]],
-        [cube[4][2][0], cube[2][1][0], cube[4][2][2]],
+        [cube[4][0][0], cube[0][1][0], cube[4][0][2]],
+        [cube[4][1][0], cube[0][1][1], cube[4][1][2]],
+        [cube[4][2][0], cube[0][1][2], cube[4][2][2]],
     ]
-
     newCube[5] = cube[5]
-
     return newCube
 
 

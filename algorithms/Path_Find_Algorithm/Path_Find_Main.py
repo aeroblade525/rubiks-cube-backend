@@ -20,7 +20,7 @@ def flatten(lst):
 # sequence1d = [CubeArrayUCW, CubeArrayDCCW, CubeArrayRCW, CubeArrayBCW, CubeArrayBCW, CubeArrayFCW, CubeArrayLCCW, CubeArrayUCW, CubeArrayDCW, CubeArrayDCW,
 #               CubeArrayLCCW, CubeArrayFCCW]
 # sequence1d = [CubeArrayUCW, CubeArrayUCCW, CubeArrayRCW, CubeArrayRCCW, CubeArrayBCW, CubeArrayBCCW, CubeArrayDCW, CubeArrayDCCW, CubeArrayLCW, CubeArrayLCCW,
-#               CubeArrayFCW, CubeArrayFCCW]
+#               CubeArrayFCW, CubeArrayFCCW, CubeArrayMCCW, CubeArrayMCW, CubeArraySCCW, CubeArraySCW, CubeArrayECCW, CubeArrayECW]
 
 def solve_algorithm(cube, seqeunce):
     CurrentState = copy.deepcopy(cube)
