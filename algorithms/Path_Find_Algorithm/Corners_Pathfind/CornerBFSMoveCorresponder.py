@@ -9,7 +9,7 @@ corner_map = {
     ('CC', 'XC'): CubeArrayFCCW,
     
     ('DC', 'OC'): CubeArrayFCW,
-    ('DC', 'UC'): CubeArrayFCCW,
+    ('DC', 'VC'): CubeArrayFCCW,
     ('DC', 'QC'): CubeArrayRCW,
     ('DC', 'HC'): CubeArrayRCCW,
     

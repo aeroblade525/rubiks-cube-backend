@@ -21,6 +21,7 @@ def corner_solver(cube):
     def corner_checker():
         for k in corner_positions:
             solved_pos = home_position_corner(k, CurrentState)
+            # print(solved_pos, k)
             if solved_pos == k:
                 visited.add(coordinate_to_label_corners[k])
 
@@ -30,6 +31,11 @@ def corner_solver(cube):
         i += 1
         if i >= 20:
             return paths
+        
+        # print(visited, coordinate_to_label_corners[home_position_corner((0, 0, 0), CurrentState)], 
+        #       coordinate_to_label_corners[home_position_corner(corner_adjacents[(0, 0, 0)][0], CurrentState)], 
+        #       coordinate_to_label_corners[home_position_corner(corner_adjacents[(0, 0, 0)][1], CurrentState)])
+        # print(f"this is current state {CurrentState}")
     
         if (home_position_corner((0, 0, 0), CurrentState) == (0, 0, 0) or home_position_corner((0, 0, 0), CurrentState) == corner_adjacents[(0, 0, 0)][0]
             or home_position_corner((0, 0, 0), CurrentState) == corner_adjacents[(0, 0, 0)][1]) and i != 0:
@@ -40,6 +46,7 @@ def corner_solver(cube):
                     visited.add('UC')
                 if j not in visited:
                     corner_checker()
+                    # print(j)
                     
                     # Move new piece to buffer
                     corner_change_path = shortest_path(corner_cube_path, j, 'DC')
@@ -59,9 +66,14 @@ def corner_solver(cube):
                     paths.append(move_sequence)
                     for move in move_sequence:
                         CurrentState = move(CurrentState)
+                    # print(visited, coordinate_to_label_corners[home_position_corner((0, 0, 0), CurrentState)], 
+                    #     coordinate_to_label_corners[home_position_corner(corner_adjacents[(0, 0, 0)][0], CurrentState)], 
+                    #     coordinate_to_label_corners[home_position_corner(corner_adjacents[(0, 0, 0)][1], CurrentState)])
+                    # print(f"this is current state {CurrentState}")
                     break
         
         corner_path = shortest_path(corner_cube_path, coordinate_to_label_corners[home_position_corner((0, 0, 0), CurrentState)], coordinate_to_label_corners[(0, 2, 2)])
+        # print(corner_path)
 
         for l in visited:
             if l == coordinate_to_label_corners[home_position_corner((0, 0, 0), CurrentState)]:
@@ -74,6 +86,7 @@ def corner_solver(cube):
             
             # Move piece to buffer
             corner_path_functions = moves_corresponder_bfs(corner_path, corner_map)
+            # print(corner_path_functions)
             paths.append(corner_path_functions)
             for move in corner_path_functions:
                 CurrentState = move(CurrentState)
@@ -86,6 +99,7 @@ def corner_solver(cube):
             # Move piece back
             corner_path_reversed = corner_path[::-1]
             corner_path_functions = moves_corresponder_bfs(corner_path_reversed, corner_map)
+            # print(corner_path_functions)
             paths.append(corner_path_functions)
             for move in corner_path_functions:
                 CurrentState = move(CurrentState)
