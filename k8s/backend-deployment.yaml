@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solver-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: solver-backend
+  template:
+    metadata:
+      labels:
+        app: solver-backend
+    spec:
+      containers:
+        - name: solver-backend
+          image: rubiks-solver:v1
+          imagePullPolicy: Never # use local image built in minikube's docker
+          ports:
+            - containerPort: 8000
+          env:
+            - name: PORT
+              value: "8000"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: solver-service
+spec:
+  selector:
+    app: solver-backend
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: NodePort
